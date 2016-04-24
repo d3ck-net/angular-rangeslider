@@ -108,7 +108,7 @@
   height: 18px;
 }
 /* line 63, scss/_rangeSlider.scss */
-.ngrs-range-slider .ngrs-join {
+.ngrs-range-slider .ngrs-join, .ngrs-range-slider .ngrs-start, .ngrs-range-slider .ngrs-end{
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -339,7 +339,7 @@
   cursor: default;
 }
 /* line 345, scss/_rangeSlider.scss */
-.ngrs-range-slider.ngrs-disabled .ngrs-join {
+.ngrs-range-slider .ngrs-join, .ngrs-range-slider .ngrs-start, .ngrs-range-slider .ngrs-end{
   background: #ddd;
 }
 /* line 349, scss/_rangeSlider.scss */

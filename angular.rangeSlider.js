@@ -154,6 +154,8 @@
                     '<div class="ngrs-runner">',
                     '<div class="ngrs-handle ngrs-handle-min"><i></i></div>',
                     '<div class="ngrs-handle ngrs-handle-max"><i></i></div>',
+                    '<div class="ngrs-start"></div>',
+                    '<div class="ngrs-end"></div>',
                     '<div class="ngrs-join"></div>',
                     '</div>',
                     '<div class="ngrs-value-runner">',
@@ -173,6 +175,8 @@
                         handles = [element.find('.ngrs-handle-min'), element.find('.ngrs-handle-max')],
                         values = [element.find('.ngrs-value-min'), element.find('.ngrs-value-max')],
                         join = element.find('.ngrs-join'),
+                        startJoin = element.find('.ngrs-start'),
+                        endJoin = element.find('.ngrs-end'),
                         pos = 'left',
                         posOpp = 'right',
                         orientation = 0,
@@ -457,6 +461,8 @@
 
                                 // reposition join
                                 angular.element(join).css(pos, '0%').css(posOpp, '0%');
+                                angular.element(startJoin).css(pos, '0%').css(posOpp, '0%');
+                                angular.element(endJoin).css(pos, '0%').css(posOpp, '100%');
 
                             } else {
 
@@ -473,6 +479,8 @@
 
                                 // reposition join
                                 angular.element(join).css(pos, handle1pos + '%').css(posOpp, (100 - handle2pos) + '%');
+                                angular.element(startJoin).css(pos, '0%').css(posOpp, (handle2pos) + '%');
+                                angular.element(endJoin).css(pos, handle2pos + '%').css(posOpp, '100%').css('width',100 - handle2pos + "%");
 
                                 // ensure min handle can't be hidden behind max handle
                                 if (handle1pos > 95) {
